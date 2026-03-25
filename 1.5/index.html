@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tanulás 1.5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gyártási Dashboard</h1>
+        <nav>Felhasználó: Én</nav>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">kalkulátor</a></li>
+                <li><a href="#">készlet</a></li>
+                <li><a href="#">beállítások</a></li>
+            </ul>
+        </aside>
+        
+        <section class="content">
+            <div class="calculator-box">
+            <h3>új kalkuláció</h3>
+                <form class="calc-form">
+                    <div class="input-group">
+                        <label for="product-name">termék neve</label>
+                        <input type="text" id="product-name" name="product-name" required placegolder="névjegy">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="quantity">mennyiség</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="100">
+                    </div>
+
+                    <button class="btn-primary" type="submit">kalkuláció mentése</button>
+                </form>
+            </div>
+            <h2>aktuális feladatok</h2>
+            <div class="card-grid">
+                <article class="card">1. nap vágás</article>
+                <article class="card">2. nap nyomtatás</article>
+                <article class="card">1. nap csomagoás</article>
+            </div>
+
+            <table class="production-table">
+                <thead>
+                    <tr>
+                        <th>cikkszám</th>
+                        <th>darabszám</th>
+                        <th>megrendelő</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>tds80534</th>
+                        <th>2db</th>
+                        <th>irka firka</th>
+                    </tr>
+                    <tr>
+                        <th>tdp5443</th>
+                        <th>100db</th>
+                        <th>kirakat kft</th>
+                    </tr>
+                    <tr>
+                        <th>tdz10101</th>
+                        <th>210db</th>
+                        <th>menő manő bt</th>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Gyártási Dashboard. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>
