@@ -28,7 +28,7 @@ header{
 .sidebar{
     width: 200px;
     background-color: #f1f3f8;
-    padding: 1rem;
+    
     border-right: 1px solid #e2e7f0;;
 }
 .content{
@@ -48,6 +48,15 @@ header{
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     border-left: 5px solid var(--primary-blue);
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+
+.card-number{
+    font-size: 2rem;
+    font-weight:bold;
+    color: var(--primary-blue);
 }
 
 .calc-form{
@@ -171,6 +180,31 @@ input:focus{
     background-color: var(--primary-blue);
     box-shadow: 0 0 0 3px rgba(26,86,219,0.2);
     color:white;
+}
+
+.sidebar ul{
+    list-style:none;
+    display:block;
+    width: 100%;
+    padding:0;
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: var(--primary-blue);
+    display: block;
+    padding:1rem 1.5rem;
+    width:calc(100% -3rem);
+    transition: all ease 0.2s;
+}
+
+.sidebar li:hover{
+    background-color: #a7a7a7;
+}
+
+.sidebar li a:hover{
+    color:white;
+    background-color: #a7a7a7;
 }
 
 @media (max-width: 768px) {
