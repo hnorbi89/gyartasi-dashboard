@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tanulás 1.6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gyártási Dashboard</h1>
+        <nav>Felhasználó: Norbi</nav>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">kalkulátor</a></li>
+                <li><a href="#">készlet</a></li>
+                <li><a href="#">beállítások</a></li>
+            </ul>
+        </aside>
+        
+        <section class="content">
+            <div class="calculator-box">
+            <h3>új kalkuláció</h3>
+                <form class="calc-form">
+                    <div class="input-group">
+                        <label for="product-name">termék neve</label>
+                        <input type="text" id="product-name" name="product-name" required placeholder="névjegy">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="quantity">mennyiség</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="100">
+                    </div>
+
+                    <button class="btn-primary" type="submit">kalkuláció mentése</button>
+                </form>
+            </div>
+            <h2>aktuális feladatok</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <span class="card-number">1.</span>
+                    <span class="card-text">nap vágás</span>
+                </article>
+                <article class="card">
+                    <span class="card-number">2.</span>
+                    <span class="card-text">nap nyomtatás</span>
+                </article>
+                <article class="card">
+                    <span class="card-number">3.</span>
+                    <span class="card-text">nap csomagolás</span>
+                </article>
+            </div>
+
+            <table class="production-table">
+                <thead>
+                    <tr>
+                        <th>cikkszám</th>
+                        <th>darabszám</th>
+                        <th>megrendelő</th>
+                        <th>állapot</th>
+                        <th>műveletek</th>
+                    </tr>
+                </thead>
+                <tbody id="production-body">
+                    <tr>
+                        <td>tds80534</td>
+                        <td>2db</td>
+                        <td>irka firka</td>
+                        <td><span class="status status-pending">folyamatban</span></td>
+                        <td><button class="btn-outline delete-btn">törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>tdp5443</td>
+                        <td>100db</td>
+                        <td>kirakat kft</td>
+                        <td><span class="status status-complete">befejezve</span></td>
+                        <td><button class="btn-outline delete-btn">törlés</button></td>
+                    </tr>
+                    <tr>
+                        <td>tdz10101</td>
+                        <td>210db</td>
+                        <td>menő manő bt</td>
+                        <td><span class="status status-urgent">sürgős</span></td>
+                        <td><button class="btn-outline delete-btn">törlés</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Gyártási Dashboard. Minden jog fenntartva.</p>
+    </footer>
+    <div id="delete-modal" class="modal">
+        <div class="modal-content mac-launch">
+            <h3>Biztos törölni szeretnéd?</h3>
+            <p>Ez a művelet nem vonható vissza!</p>
+            <div class="modal-buttons">
+                <button id="cancel-btn" class="btn-outline">Mégse</button>
+                <button id="confirm-btn" class="btn-danger">Törlés</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
