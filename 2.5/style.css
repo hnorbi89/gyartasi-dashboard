@@ -318,9 +318,6 @@ input[type=number]::-webkit-outer-spin-button {
     border-color:var(--primary-blue);
     border-bottom-left-radius:0px;
     border-bottom-right-radius:0px;
-}.dropdown option{
-    border-bottom-left-radius:6px;
-    border-bottom-right-radius:6px;
 }
 
 .dropdown option:hover{
