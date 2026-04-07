@@ -5,21 +5,32 @@ const modal = document.querySelector(".modal");
 const cancelBtn = document.getElementById("cancel-btn");
 const confirmBtn = document.getElementById("confirm-btn");
 let rowToDelete = null;
+const minusBtn = document.getElementById("minus-btn");
+const plusBtn = document.getElementById("plus-btn");
+const quantityInput = document.getElementById("quantity");
 
+plusBtn.addEventListener('click', ()=>{
+    quantityInput.value = parseInt(quantityInput.value) +1;
+});
+
+minusBtn.addEventListener('click', ()=>{
+    if(parseInt(quantityInput.value) > 1){
+        quantityInput.value = parseInt(quantityInput.value) - 1;
+    }
+});
 
 calcForm.addEventListener('submit', function(event){
     // megállítom az oldal újratöltődését
     event.preventDefault();
 
-    const productName = document.getElementById('product-name').value;
+    const productName = document.getElementById('profil').value;
     const quantity = document.getElementById('quantity').value;
-
+    const rowNumber = document.getElementById("row-number").value;
     const newRow = document.createElement('tr');
     newRow.innerHTML = `
-        <td>${productName}</td>
-        <td>${quantity}</td>
-        <td>én voltam</td>
-        <td><span class="status-pending">Folyamatban</span></td>
+        <td>${productName} mm</td>
+        <td>${rowNumber} soros</td>
+        <td>${quantity} db</td>
         <td><button class="btn-outline delete-btn">Törlés</button></td>
     `;
     tableBody.appendChild(newRow);
