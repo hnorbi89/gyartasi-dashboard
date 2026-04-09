@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tanulás 1.6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gyártási Dashboard</h1>
+        <nav>Felhasználó: Norbi</nav>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">kalkulátor</a></li>
+                <li><a href="#">készlet</a></li>
+                <li><a href="#">beállítások</a></li>
+            </ul>
+        </aside>
+
+        <section class="content">
+            <div class="calculator-box">
+                <h3>Profilok</h3>
+                <form class="calc-form">
+                    <div class="input-group">
+                        <label for="profil">termék neve</label>
+                        <select name="profil" id="profil" class="dropdown">
+                            <option value="31">31mm</option>
+                            <option value="40">40mm</option>
+                            <option value="46">46mm</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="row-number">sorok száma</label>
+                        <select name="row-number" id="row-number" class="dropdown">
+                            <option value="1">1 sor</option>
+                            <option value="2">2 sor</option>
+                            <option value="3">3 sor</option>
+                            <option value="4">4 sor</option>
+                            <option value="5">5 sor</option>
+                            <option value="6">6 sor</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="quantity">darab</label>
+                        <div class="quantity-selector">
+                            <button type="button" class="quantity-btn" id="minus-btn">-</button>
+                            <input type="number" id="quantity" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity-btn" id="plus-btn">+</button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="order">Rendelés</label>
+                        <select name="order" id="order" class="dropdown">
+                            <option value="Új rendelés">Új rendelés</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-primary" type="submit">Hozzáadás</button>
+                </form>
+            </div>
+            <h2>Aktuális rendelések</h2>
+            <div class="card-grid">
+
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Gyártási Dashboard. Minden jog fenntartva.</p>
+    </footer>
+    <div id="delete-modal" class="modal">
+        <div class="modal-content mac-launch">
+            <h3>Biztos törölni szeretnéd?</h3>
+            <p>Ez a művelet nem vonható vissza!</p>
+            <div class="modal-buttons">
+                <button id="cancel-btn" class="btn-outline">Mégse</button>
+                <button id="confirm-btn" class="btn-danger">Törlés</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
