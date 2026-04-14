@@ -325,6 +325,14 @@ input[type=number]::-webkit-outer-spin-button {
     color:white;
 }
 
+.btn{
+    cursor:pointer;
+    transition: all ease 0.3s;
+}
+
+.btn:hover{
+    color:#ef4444;
+}
 
 @keyframes fadeIn{
     from {opacity: 0;}

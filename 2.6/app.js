@@ -29,6 +29,14 @@ calcForm.addEventListener("submit", function (event) {
     cardGrid.appendChild(createArticle());
     order.appendChild(createOption());
     orders.push(order.value);
+    document
+      .querySelector(".production-table")
+      .addEventListener("click", (event) => {
+        if (event.target.classList.contains("btn")) {
+          rowToDelete = event.target.closest("tr");
+          modal.style.display = "flex";
+        }
+      });
   } else {
     const currentOrder = document.getElementById(`${order.value}`);
     currentOrder.appendChild(addArticle());
@@ -42,6 +50,7 @@ function addArticle() {
     <td>${profil.value} mm</td>
     <td>${rowNumber.value} soros</td>
     <td>${quantityInput.value} db</td>
+    <td><span class="material-symbols-outlined btn">delete</span></td>
   `;
   return tr;
 }
@@ -59,10 +68,10 @@ function createArticle() {
   article.classList.add("card");
 
   article.innerHTML = `
-    <table class ="production-table" >
+    <table class="production-table" >
       <thead>
         <tr>
-          <th colspan="3" style="text-align:center;">${order.value}</th>
+          <th colspan="4" style="text-align:center;">${order.value}</th>
         </tr>
       </thead>
       <tbody id="${order.value}">
@@ -70,6 +79,7 @@ function createArticle() {
           <td>${profil.value} mm</td>
           <td>${rowNumber.value} soros</td>
           <td>${quantityInput.value} db</td>
+          <td><span class="material-symbols-outlined btn">delete</span></td>
         </tr>
       </tbody>
 
