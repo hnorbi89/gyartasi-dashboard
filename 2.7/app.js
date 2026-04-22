@@ -11,6 +11,12 @@ const order = document.getElementById("order");
 const rowNumber = document.getElementById("row-number");
 let optionNumber = 1;
 const orders = [];
+const allOrders = [];
+const savedOrders = localStorage.getItem("allOrders");
+
+if (savedOrders) {
+  // ha vannak mentett rendelések, akkor betöltjük őket
+}
 
 document.querySelector(".card-grid").addEventListener("click", (event) => {
   if (event.target.classList.contains("btn")) {
@@ -51,6 +57,7 @@ function addArticle() {
     <td>${quantityInput.value} db</td>
     <td><span class="material-symbols-outlined btn">delete</span></td>
   `;
+  saveOrders();
   return tr;
 }
 
@@ -81,10 +88,20 @@ function createArticle() {
           <td><span class="material-symbols-outlined btn">delete</span></td>
         </tr>
       </tbody>
-
     </table>
     `;
+  saveOrders();
   return article;
+}
+
+function saveOrders() {
+  allOrders.push({
+    order: order.value,
+    profil: profil.value,
+    rowNumber: rowNumber.value,
+    quantity: quantityInput.value,
+  });
+  localStorage.setItem("allOrders", JSON.stringify(allOrders));
 }
 
 function closeModal() {
